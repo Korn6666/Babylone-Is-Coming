@@ -44,10 +44,16 @@ public class Playermove : MonoBehaviour
             {
                 transform.Translate(new Vector3(horiz,verti,0) * Time.deltaTime * speed);
                 playerAnimator.SetBool("isMoving", true);
+
+                //Interruption du canvas si mouvement
+                CanvasBuild.SetActive(false);
             }
             else
             {
                 playerAnimator.SetBool("isMoving", false);
+
+                //Canvas apparait si immobile
+                CanvasBuild.SetActive(true);
             }
      
 
