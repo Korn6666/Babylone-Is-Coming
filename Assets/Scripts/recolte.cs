@@ -16,6 +16,7 @@ public class recolte : MonoBehaviour
     {
         tourSansRecolte +=1;
         grammes+= 10*tourSansRecolte;
+        Debug.Log("oui");
     }
 
     void Jardined()

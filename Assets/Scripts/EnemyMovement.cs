@@ -50,7 +50,7 @@ public class EnemyMovement : MonoBehaviour
             }
             tileRoadNumber += 1;
             destination = RoadSprites[tileRoadNumber];
-            Debug.Log(destination.gameObject.name);
+
             Vector3 direction = (destination.position- transform.position - offSet).normalized;
             direction2D =  new Vector3(direction.x, direction.y, 0);
         }
