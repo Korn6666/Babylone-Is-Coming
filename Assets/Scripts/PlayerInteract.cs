@@ -16,8 +16,8 @@ public class PlayerInteract : MonoBehaviour
     public GameObject CanvasBuild;
 
     //Tours
-    public GameObject TourTest;
-    
+    public GameObject TourChampignon;
+    public int CoutTourChampignon;
     
     //Detection de la tile
     void OnTriggerEnter(Collider tile)
@@ -53,15 +53,27 @@ public class PlayerInteract : MonoBehaviour
                 CanvasBuild.SetActive(true);
             }
 
+
         }
     }
 
     //Build (tours)
-    public void BuildTowerTest()
+    public void BuildTourChampi()
     {
-        TilePosition = currentTile.transform.position;
-        TilePosition.z-=1;
-        Instantiate(TourTest, TilePosition, Quaternion.identity);
+        if (CoutTourChampignon < PlayerGrammes)
+        {
+            PlayerGrammes-=CoutTourChampignon;
+        
+            TilePosition = currentTile.transform.position;
+            TilePosition.z-=1;
+            Instantiate(TourChampignon, TilePosition, Quaternion.identity);
+            CanvasBuild.SetActive(false);
+        }
+        else
+        {
+            CanvasBuild.transform.GetChild(0).gameObject.SetActive(false);
+            CanvasBuild.transform.GetChild(1).gameObject.SetActive(true);
+        }
 
     }
 

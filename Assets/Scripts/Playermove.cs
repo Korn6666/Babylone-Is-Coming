@@ -12,7 +12,8 @@ public class Playermove : MonoBehaviour
     private Vector3 BaseDirection;
     private float BaseDistance;
     [SerializeField] private Animator playerAnimator;
-
+    public GameObject CanvasBuild;
+    
     void Start()
     {
 

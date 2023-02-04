@@ -113,8 +113,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32000002, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.5801265, y: 3.4688594, z: 5}
+  m_Center: {x: 0.059689756, y: 0.013573869, z: 0}
 --- !u!114 &1853042649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  BaseTransform: {fileID: 0}
+  BaseTransform: {fileID: 2752610140652635163, guid: 27cb51561188f4f51878a4d18835efd2,
+    type: 3}
   playerAnimator: {fileID: 1079557597}
 --- !u!114 &1853042653
 MonoBehaviour:
@@ -145,7 +146,9 @@ MonoBehaviour:
   PlayerGrammes: 0
   currentTile: {fileID: 0}
   CanvasBuild: {fileID: 0}
-  TourTest: {fileID: 0}
+  TourChampignon: {fileID: 5344564321782160966, guid: d8477c08781ffac4385b8377bc7be60d,
+    type: 3}
+  CoutTourChampignon: 5
 --- !u!95 &1079557597
 Animator:
   serializedVersion: 3
