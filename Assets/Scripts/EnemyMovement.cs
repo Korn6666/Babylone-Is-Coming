@@ -12,6 +12,7 @@ public class EnemyMovement : MonoBehaviour
     private Transform destination;
     private Vector3 direction2D;
     public float speed;
+    [SerializeField] private GameObject BlackFade;
 
     void Start()
     {
@@ -41,6 +42,7 @@ public class EnemyMovement : MonoBehaviour
         {
             if (tileRoadNumber == RoadSprites.Length - 2)
             {
+                Instantiate( BlackFade, Vector3.zero, Quaternion.identity);
                 gameObject.SetActive(false);
             }
             tileRoadNumber += 1;

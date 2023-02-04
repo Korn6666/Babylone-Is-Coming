@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: ee40d779d77b14e0a8410136f2fc08f1
+  - enabled: 1
+    path: Assets/Scenes/SimonScene2.unity
+    guid: ed4bec4d575c344d4be534cc20813aa0
+  - enabled: 1
+    path: Assets/Scenes/Parking.unity
+    guid: f05a970410fa14bf19fa1acc2267e2ac
   m_configObjects: {}
