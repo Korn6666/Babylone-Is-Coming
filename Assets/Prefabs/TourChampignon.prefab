@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2905923998902446873
+--- !u!1 &5344564321782160966
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2905923998902446874}
-  - component: {fileID: 2905923998902446875}
-  - component: {fileID: 2905923998902446872}
-  - component: {fileID: 2905923998902447077}
-  - component: {fileID: 2905923998902447076}
-  - component: {fileID: 2905923998902447079}
+  - component: {fileID: 5344564321782160965}
+  - component: {fileID: 5344564321782160964}
+  - component: {fileID: 5344564321782160970}
+  - component: {fileID: 5344564321782160967}
   m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Enemy
+  m_Name: TourChampignon
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2905923998902446874
+--- !u!4 &5344564321782160965
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905923998902446873}
+  m_GameObject: {fileID: 5344564321782160966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.06, y: 0.18, z: -1.098}
-  m_LocalScale: {x: 1.4877213, y: 1.4367939, z: 2.9011}
+  m_LocalPosition: {x: 2.54, y: -1.62, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2905923998902446875
+--- !u!212 &5344564321782160964
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905923998902446873}
+  m_GameObject: {fileID: 5344564321782160966}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,8 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 95ee75a80d77a4f82bd96801eafe21de, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b76742519b8b2714a863473f49c7eb42, type: 3}
+  m_Color: {r: 0.028301895, g: 0.00040049778, b: 0.00040049778, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,59 +83,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!54 &2905923998902446872
-Rigidbody:
+--- !u!135 &5344564321782160970
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905923998902446873}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &2905923998902447077
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905923998902446873}
+  m_GameObject: {fileID: 5344564321782160966}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.13742353, y: 0.1172697, z: 0.5958662}
-  m_Center: {x: 0, y: 0, z: 0.22912502}
---- !u!114 &2905923998902447076
+  m_Radius: 1.5500926
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5344564321782160967
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905923998902446873}
+  m_GameObject: {fileID: 5344564321782160966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cd817831913f4d698240db0fdcb2e77, type: 3}
+  m_Script: {fileID: 11500000, guid: d0a52048270bfb043b2ec8f6b67e575c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
---- !u!114 &2905923998902447079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905923998902446873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0fe831f477594c20b6a15fcfa09799f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxConversion: 10
-  EnemyMovement: {fileID: 2905923998902447076}
+  HitBoxChampignon: {fileID: 5344564321782160970}
+  timeRemaining: 3
+  damageChampi: 2

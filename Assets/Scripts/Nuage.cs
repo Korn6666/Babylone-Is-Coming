@@ -8,13 +8,13 @@ public class Nuage : MonoBehaviour
     public Collider HitBoxChampignon;
     public float timeRemaining = 3f;
     // Update is called once per frame
-
+    public int damageChampi;
     void OnTriggerEnter(Collider enemy)
     {
         if (enemy.gameObject.tag == "Enemy")
         {
 
-            enemy.gameObject.SendMessage("Convert", 20);
+            enemy.gameObject.SendMessage("Convert", damageChampi);
         }
     }
 
