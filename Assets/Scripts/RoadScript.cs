@@ -5,8 +5,8 @@ using UnityEngine;
 public class RoadScript : MonoBehaviour
 {
 
-    private Transform[] RoadSprites;
-    void Start()
+    public Transform[] RoadSprites;
+    void Awake()
     {
         RoadSprites = gameObject.GetComponentsInChildren<Transform>();
         // foreach(Transform RoadSprite in RoadSprites)
