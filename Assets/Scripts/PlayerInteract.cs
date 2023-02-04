@@ -50,7 +50,7 @@ public class PlayerInteract : MonoBehaviour
             //Build (canvas)
             if (currentTile.tag == "Plots")
             {
-                CanvasBuild.SetActive(true);
+                CanvasBuild.transform.GetChild(0).gameObject.SetActive(true);
             }
 
 
@@ -60,14 +60,14 @@ public class PlayerInteract : MonoBehaviour
     //Build (tours)
     public void BuildTourChampi()
     {
-        if (CoutTourChampignon < PlayerGrammes)
+        if (CoutTourChampignon <= PlayerGrammes)
         {
             PlayerGrammes-=CoutTourChampignon;
         
             TilePosition = currentTile.transform.position;
             TilePosition.z-=1;
             Instantiate(TourChampignon, TilePosition, Quaternion.identity);
-            CanvasBuild.SetActive(false);
+            CanvasBuild.transform.GetChild(0).gameObject.SetActive(false);
         }
         else
         {
