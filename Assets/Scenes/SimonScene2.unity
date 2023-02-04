@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &258076387 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1038842487698943047, guid: 9da112cb4d5734120ba10481508e2ae7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3370674154132358553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4678f1486574ad7bae65332c0bf995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &290418117
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,18 +352,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8477c08781ffac4385b8377bc7be60d, type: 3}
---- !u!114 &608012847 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3370674154735652790, guid: 9da112cb4d5734120ba10481508e2ae7,
-    type: 3}
-  m_PrefabInstance: {fileID: 3370674154132358553}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb4678f1486574ad7bae65332c0bf995, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &737152621 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1853042653, guid: c59d683500fea2f4ea7a17d3ae18286b,
@@ -662,6 +662,31 @@ PrefabInstance:
       propertyPath: PlayerInteract
       value: 
       objectReference: {fileID: 737152621}
+    - target: {fileID: 330881209074097224, guid: 9da112cb4d5734120ba10481508e2ae7,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330881209074097224, guid: 9da112cb4d5734120ba10481508e2ae7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 330881209074097224, guid: 9da112cb4d5734120ba10481508e2ae7,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472496566712724450, guid: 9da112cb4d5734120ba10481508e2ae7,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 472496566712724450, guid: 9da112cb4d5734120ba10481508e2ae7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3370674153513971395, guid: 9da112cb4d5734120ba10481508e2ae7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -785,7 +810,7 @@ PrefabInstance:
         type: 3}
       propertyPath: TimeBar
       value: 
-      objectReference: {fileID: 608012847}
+      objectReference: {fileID: 258076387}
     - target: {fileID: 6657815278731196791, guid: ebf9ed29bc42842928fc50e09201d1a8,
         type: 3}
       propertyPath: m_RootOrder
