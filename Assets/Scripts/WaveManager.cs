@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class WaveManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float waitnextwave=5f;
+    [SerializeField] private TimeBar TimeBar;
+    [SerializeField] private float preparationTime;
+    private float preparationTimeTimer;
+    public static bool preparation;
     private float waitnextspawn = 1f;
     public int activeEnemyCount;
     public int currentWave; // Numéro de la vague
@@ -14,9 +19,29 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
-
         EnemyList = new GameObject[] { Enemy1 };
         StartCoroutine(WavesRoutine());
+        TimeBar.SetMaxTime(preparationTime);
+    }
+
+    void Update()
+    {
+
+        if (preparation)
+        {
+            TimeBar.gameObject.SetActive(true);
+            TimeBar.SetTime(preparationTimeTimer);
+            if (preparationTimeTimer > 0)
+            {
+                preparationTimeTimer -= Time.deltaTime;
+            }else 
+            {
+                TimeBar.gameObject.SetActive(false);
+                preparation = false;
+            }
+        }
+
+
     }
 
     private IEnumerator SpawnanEnemy()
@@ -36,8 +61,6 @@ public class WaveManager : MonoBehaviour
         while (true)
         {
             currentWave += 1;
-
-            yield return new WaitForSeconds(waitnextwave);
             for (int i=1; i<=currentWaveNbEnemy; i++)
             {
                 StartCoroutine(SpawnanEnemy()); 
@@ -54,6 +77,15 @@ public class WaveManager : MonoBehaviour
             {
                 yield return null;
             }
+
+            // Phase de preparation
+            preparation = true;
+            preparationTimeTimer = preparationTime;     
+
+            while (preparation)
+            {
+                yield return null;
+            }    
         }
     }
 }
