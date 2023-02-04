@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
 
     private int tileRoadNumber; // Numéro de la tile à suivre
-    [SerializeField] private RoadScript RoadScript;
+    private RoadScript RoadScript;
     private Transform[] RoadSprites;
     private Transform destination;
     private Vector3 direction2D;
@@ -15,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
+        RoadScript = GameObject.FindGameObjectWithTag("Road").GetComponent<RoadScript>();
         RoadSprites = RoadScript.RoadSprites;        
         tileRoadNumber = 1;
         destination = RoadSprites[tileRoadNumber];
@@ -31,17 +32,15 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter (Collider Entity)
     {
-        if (tileRoadNumber == RoadSprites.Length - 2)
+        if (Entity.gameObject.tag == "RoadTile")
         {
-            gameObject.SetActive(false);
+            if (tileRoadNumber == RoadSprites.Length - 2)
+            {
+                gameObject.SetActive(false);
+            }
+            tileRoadNumber += 1;
+            destination = RoadSprites[tileRoadNumber];
+            direction2D = (destination.position - transform.position).normalized;
         }
-        Debug.Log(tileRoadNumber);
-        tileRoadNumber += 1;
-        destination = RoadSprites[tileRoadNumber];
-        direction2D = (destination.position - transform.position).normalized;
-
-
-
-
     }
 }

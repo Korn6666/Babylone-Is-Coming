@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float maxConversion;
     private float conversion;
     [SerializeField] EnemyMovement EnemyMovement;
+    [SerializeField] WaveManager WaveManager;
     void Start()
     {
         conversion = 0;
@@ -34,6 +35,13 @@ public class EnemyHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             conversion += 20;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            WaveManager.OnDestroy();
+            Destroy(gameObject);
         }
     }
 

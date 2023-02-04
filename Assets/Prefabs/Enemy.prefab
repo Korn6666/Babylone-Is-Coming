@@ -126,7 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd817831913f4d698240db0fdcb2e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoadScript: {fileID: 0}
   speed: 1
 --- !u!114 &2905923998902447079
 MonoBehaviour:
@@ -142,3 +141,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxConversion: 10
   EnemyMovement: {fileID: 2905923998902447076}
+  WaveManager: {fileID: 6657815278731196790, guid: ebf9ed29bc42842928fc50e09201d1a8,
+    type: 3}
