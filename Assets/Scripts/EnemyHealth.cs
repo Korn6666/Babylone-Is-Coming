@@ -13,6 +13,13 @@ public class EnemyHealth : MonoBehaviour
         conversion = 0;
     }
 
+    //Pour qu'il se fasse SendMessage("Convert") quand il prend un hit
+    void Convert()
+    {
+        conversion += 1;
+        Debug.Log(conversion);
+    } 
+
     // Update is called once per frame
     void Update()
     {
