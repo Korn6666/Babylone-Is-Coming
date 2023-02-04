@@ -28,6 +28,11 @@ public class EnemyMovement : MonoBehaviour
 
         transform.Translate( direction2D * speed * Time.deltaTime);
 
+        if (transform.position.z > -2.1f)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -2.2f);
+        }
+
     }
 
     private void OnTriggerEnter (Collider Entity)

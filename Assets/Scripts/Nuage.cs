@@ -26,6 +26,7 @@ public class Nuage : MonoBehaviour
         if (timeRemaining >1 && timeRemaining<1.2)
         {
             HitBoxChampignon.enabled = false;
+            transform.GetChild(0).gameObject.SetActive(false);
         }
         
         if (timeRemaining > 0)
@@ -36,6 +37,7 @@ public class Nuage : MonoBehaviour
         {
             timeRemaining =3f;
             HitBoxChampignon.enabled=true;
+            transform.GetChild(0).gameObject.SetActive(true);
         }
 
     }
