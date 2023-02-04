@@ -6,7 +6,7 @@ public class Nuage : MonoBehaviour
 {
 
     public Collider HitBoxChampignon;
-    public float timeRemaining = 3f;
+    public float timeRemaining = 4f;
     // Update is called once per frame
     public int damageChampi;
     public float slowforce;
@@ -38,7 +38,7 @@ public class Nuage : MonoBehaviour
         else
         {
             champAnimator.SetBool("Smoke", true);
-            timeRemaining =3f;
+            timeRemaining =4f;
             HitBoxChampignon.enabled=true;
             transform.GetChild(0).gameObject.SetActive(true);
         }
