@@ -19,8 +19,10 @@ public class EnemyHealth : MonoBehaviour
     //Variables envoyés par nuage de champignon
     private float slowforce;
     private int damage;
-
-
+    
+    //Post-Conversion
+    private float deathCoolDown=10f;
+    private bool needsToDie=false;
 
     void Start()
     {
@@ -67,12 +69,26 @@ public class EnemyHealth : MonoBehaviour
             }
         }
        
+       //Doit mourrir après conversion
+       if (needsToDie)
+       {
+            deathCoolDown -= Time.deltaTime;
+
+            if (deathCoolDown<0)
+            {
+                Destroy(gameObject);
+            }
+
+       }
 
 
         if (conversion >= maxConversion && !converted) 
         {
             EnemyMovement.speed *= 1.5f;
             converted = true;
+            gameObject.GetComponent<BoxCollider>().enabled=false;
+            EnemyMovement.direction2D = new Vector3(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f),0).normalized;
+            needsToDie = true;
         }
 
         if (Input.GetKeyDown(KeyCode.C))
@@ -89,8 +105,4 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void TakeConversion( float conversionToken )
-    {
-        conversion += conversionToken;
-    }
 }

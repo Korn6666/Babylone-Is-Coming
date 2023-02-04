@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     private RoadScript RoadScript;
     private Transform[] RoadSprites;
     private Transform destination;
-    private Vector3 direction2D;
+    public Vector3 direction2D;
     public float speed;
     [SerializeField] private GameObject BlackFade;
     private Vector3 offSet;

@@ -108,6 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd716136015747479523426f66c2991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowforce: 0
-  damageFougere: 0
-  MaxCooldown: 0
+  slowforce: 1
+  damageFougere: 10
+  MaxCooldown: 2
