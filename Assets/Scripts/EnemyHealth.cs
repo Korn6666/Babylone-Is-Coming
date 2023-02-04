@@ -4,30 +4,63 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField] private float maxConversion;
     public float conversion;
     [SerializeField] private EnemyMovement EnemyMovement;
     private WaveManager WaveManager;
     private bool converted;
 
+    //slow
+    public bool slowed;
+    private float cooldown;
+    public float maxCooldown;
+    private float previousSpeed;
+    //
+    //Variables envoyés par nuage de champignon
+    private float slowforce;
+    private int damage;
+
+
+
     void Start()
     {
         WaveManager = GameObject.FindGameObjectWithTag("WaveManager").GetComponent<WaveManager>();
         conversion = 0;
+        cooldown = maxCooldown;
     }
 
     //Pour qu'il se fasse SendMessage("Convert") quand il prend un hit
-    void Convert(int damage)
+    void Convert(object[] tab)
     {
+        
+        damage = (int) tab[0];
+        slowforce = (float) tab[1];
+
         conversion += damage;
-        Debug.Log(conversion);
+
+        slowed=true;
+        previousSpeed=EnemyMovement.speed;
+        EnemyMovement.speed/=slowforce;
     } 
 
     // Update is called once per frame
     void Update()
     {
         
+        //Slow
+        if (slowed==true)
+        {
+            cooldown-=Time.deltaTime;
+            if (cooldown <0)
+            {
+                slowed=false;
+                cooldown = maxCooldown;
+                EnemyMovement.speed = previousSpeed;
+        
+            }
+        }
+       
+
 
         if (conversion >= maxConversion && !converted) 
         {

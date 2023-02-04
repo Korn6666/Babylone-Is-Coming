@@ -9,18 +9,21 @@ public class Nuage : MonoBehaviour
     public float timeRemaining = 3f;
     // Update is called once per frame
     public int damageChampi;
+    public float slowforce;
     void OnTriggerEnter(Collider enemy)
     {
         if (enemy.gameObject.tag == "Enemy")
         {
-
-            enemy.gameObject.SendMessage("Convert", damageChampi);
+            object[] tableau = new object[2];
+            tableau[0]=damageChampi;
+            tableau[1]=slowforce;
+            enemy.gameObject.SendMessage("Convert", tableau);
         }
     }
 
     void Update()
     {
-        if (timeRemaining >1 && timeRemaining<1.5)
+        if (timeRemaining >1 && timeRemaining<1.2)
         {
             HitBoxChampignon.enabled = false;
         }
