@@ -13,12 +13,18 @@ public class WaveManager : MonoBehaviour
     public static bool preparation;
     private float waitnextspawn = 1f;
     public int activeEnemyCount;
-    public int currentWave; // Numéro de la vague
+    public int currentWave; // Numero de la vague
     public GameObject Enemy1;
     private GameObject[] EnemyList;
 
+    public GameObject PlantsPapa;
+    public List<GameObject> PlantsList;
+
+
     void Start()
     {
+
+
         EnemyList = new GameObject[] { Enemy1 };
         StartCoroutine(WavesRoutine());
         TimeBar.SetMaxTime(preparationTime);
@@ -61,6 +67,18 @@ public class WaveManager : MonoBehaviour
         while (true)
         {
             currentWave += 1;
+
+
+        foreach (Transform child in PlantsPapa.transform)
+        { 
+            child.gameObject.SendMessage("Grow");
+
+        }
+            
+            foreach (Transform child in PlantsPapa.transform)
+            {
+                PlantsList.Add(child.gameObject);
+            }
             for (int i=1; i<=currentWaveNbEnemy; i++)
             {
                 StartCoroutine(SpawnanEnemy()); 

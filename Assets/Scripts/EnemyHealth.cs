@@ -86,6 +86,7 @@ public class EnemyHealth : MonoBehaviour
         {
             EnemyMovement.speed *= 1.5f;
             converted = true;
+            WaveManager.activeEnemyCount -= 1;
             gameObject.GetComponent<BoxCollider>().enabled=false;
             EnemyMovement.direction2D = new Vector3(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f),0).normalized;
             needsToDie = true;

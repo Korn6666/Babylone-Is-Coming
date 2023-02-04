@@ -55,6 +55,7 @@ public class PlayerInteract : MonoBehaviour
 
                     PlayerGrammes += scriptRecolte.grammes;
                     scriptRecolte.grammes=0;
+                    scriptRecolte.tourSansRecolte=0;
                 }
 
                 //Build (canvas)

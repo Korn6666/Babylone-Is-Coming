@@ -96,7 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Jardinier: {fileID: 0}
-  WaveManager: {fileID: 0}
+  WaveManager: {fileID: 6657815278731196793, guid: ebf9ed29bc42842928fc50e09201d1a8,
+    type: 3}
   grammes: 10
   tourSansRecolte: 0
 --- !u!65 &8300012679797855191
