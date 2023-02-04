@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Road
   - RoadTile
+  - WaveManager
   layers:
   - Default
   - TransparentFX
