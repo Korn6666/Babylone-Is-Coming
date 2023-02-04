@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         RoadScript = GameObject.FindGameObjectWithTag("Road").GetComponent<RoadScript>();
-        RoadSprites = RoadScript.RoadSprites;        
+        RoadSprites = RoadScript.RoadSprites;
         tileRoadNumber = 1;
         destination = RoadSprites[tileRoadNumber];
         Vector3 direction = (destination.position - transform.position).normalized;

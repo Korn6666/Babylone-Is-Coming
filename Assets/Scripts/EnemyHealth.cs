@@ -7,10 +7,13 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private float maxConversion;
     private float conversion;
-    [SerializeField] EnemyMovement EnemyMovement;
-    [SerializeField] WaveManager WaveManager;
+    [SerializeField] private EnemyMovement EnemyMovement;
+    private WaveManager WaveManager;
+    private bool converted;
+
     void Start()
     {
+        WaveManager = GameObject.FindGameObjectWithTag("WaveManager").GetComponent<WaveManager>();
         conversion = 0;
     }
 
@@ -26,10 +29,10 @@ public class EnemyHealth : MonoBehaviour
     {
         
 
-        if (conversion >= maxConversion)
+        if (conversion >= maxConversion && !converted) 
         {
             EnemyMovement.speed *= 1.5f;
-            conversion = 0;
+            converted = true;
         }
 
         if (Input.GetKeyDown(KeyCode.C))
@@ -40,7 +43,8 @@ public class EnemyHealth : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            WaveManager.OnDestroy();
+            WaveManager.activeEnemyCount -= 1;
+            Debug.Log(WaveManager.activeEnemyCount);
             Destroy(gameObject);
         }
     }

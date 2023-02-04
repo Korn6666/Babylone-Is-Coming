@@ -7,7 +7,7 @@ public class WaveManager : MonoBehaviour
     // Start is called before the first frame update
     private float waitnextwave=5f;
     private float waitnextspawn = 1f;
-    [SerializeField] private int activeEnemyCount;
+    public int activeEnemyCount;
     public int currentWave; // Numéro de la vague
     public GameObject Enemy1;
     private GameObject[] EnemyList;
@@ -25,14 +25,6 @@ public class WaveManager : MonoBehaviour
         GameObject EnemyToSpawn = EnemyList[index];
         yield return new WaitForSeconds(0f);
         Instantiate(EnemyToSpawn, transform.position, Quaternion.identity);
-    }
-    public void OnDestroy()
-    {
-        Debug.Log("yaaa");
-        if (activeEnemyCount > 0)
-        {
-            activeEnemyCount += 1;
-        }
     }
 
     private IEnumerator WavesRoutine()
