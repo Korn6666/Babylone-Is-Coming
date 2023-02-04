@@ -38,9 +38,16 @@ public class EnemyHealth : MonoBehaviour
 
         conversion += damage;
 
-        slowed=true;
-        previousSpeed=EnemyMovement.speed;
-        EnemyMovement.speed/=slowforce;
+        if (!slowed)
+        {
+            slowed=true;
+            previousSpeed=EnemyMovement.speed;
+            EnemyMovement.speed/=slowforce;
+        }
+        else 
+        {
+            cooldown=maxCooldown;
+        }
     } 
 
     // Update is called once per frame

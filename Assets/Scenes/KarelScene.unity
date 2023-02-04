@@ -271,6 +271,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TourChampignon
       objectReference: {fileID: 0}
+    - target: {fileID: 5344564321782160967, guid: d8477c08781ffac4385b8377bc7be60d,
+        type: 3}
+      propertyPath: slowforce
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8477c08781ffac4385b8377bc7be60d, type: 3}
 --- !u!1001 &342786961

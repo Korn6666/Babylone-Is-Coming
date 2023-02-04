@@ -193,4 +193,4 @@ MonoBehaviour:
   HitBoxChampignon: {fileID: 5344564321782160970}
   timeRemaining: 3
   damageChampi: 2
-  slowforce: 5
+  slowforce: 3
