@@ -61,6 +61,7 @@ public class PlayerInteract : MonoBehaviour
                 //Build (canvas)
                 if (currentTile.tag == "Plots")
                 {
+                    ResetCanvas();
                     CanvasBuild.transform.GetChild(0).gameObject.SetActive(true);
                     CanvasBuild.transform.GetChild(2).gameObject.SetActive(true);
 
@@ -68,6 +69,7 @@ public class PlayerInteract : MonoBehaviour
             }
             else
             {
+                ResetCanvas();
                 CanvasBuild.transform.GetChild(7).gameObject.SetActive(true);
             }
 
@@ -91,7 +93,8 @@ public class PlayerInteract : MonoBehaviour
         }
         else
         {
-            CanvasBuild.transform.GetChild(0).gameObject.SetActive(false);
+            Debug.Log("okokok");
+            ResetCanvas();
             CanvasBuild.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
@@ -100,7 +103,7 @@ public class PlayerInteract : MonoBehaviour
         if (CoutTourChampignon <= PlayerGrammes)
         {
             PlayerGrammes-=CoutTourChampignon;
-            CanvasBuild.transform.GetChild(0).gameObject.SetActive(false);
+            ResetCanvas();
             CanvasBuild.transform.GetChild(2).gameObject.SetActive(true);
             CanvasBuild.transform.GetChild(3).gameObject.SetActive(true);
             CanvasBuild.transform.GetChild(4).gameObject.SetActive(true);
@@ -108,7 +111,7 @@ public class PlayerInteract : MonoBehaviour
         }
         else
         {
-            CanvasBuild.transform.GetChild(6).gameObject.SetActive(false);
+            ResetCanvas();
             CanvasBuild.transform.GetChild(1).gameObject.SetActive(true);
         }
 

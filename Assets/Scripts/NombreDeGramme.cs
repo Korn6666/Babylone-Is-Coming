@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,8 +11,9 @@ public class NombreDeGramme : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         nbGrammes = PlayerInteract.PlayerGrammes;
         GetComponent<Text>().text = "Nombre de grammes:  " + nbGrammes;
+
     }
 }
