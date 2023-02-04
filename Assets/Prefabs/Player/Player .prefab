@@ -144,12 +144,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed5e6e03dec43c4985e0b5b22ee563f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerGrammes: 0
+  PlayerGrammes: 10
   currentTile: {fileID: 0}
   CanvasBuild: {fileID: 0}
   TourChampignon: {fileID: 5344564321782160966, guid: d8477c08781ffac4385b8377bc7be60d,
     type: 3}
   CoutTourChampignon: 5
+  TourFougere: {fileID: 0}
+  Occupe: {fileID: 0}
 --- !u!95 &1079557597
 Animator:
   serializedVersion: 3
