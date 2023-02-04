@@ -11,13 +11,19 @@ public class Nuage : MonoBehaviour
 
     void OnTriggerEnter(Collider enemy)
     {
-        if enemy.gameObject.tag = "Enemy";
-        enemy.gameObject.SendMessage("Convert", 20);
+        if (enemy.gameObject.tag == "Enemy")
+        {
+
+            enemy.gameObject.SendMessage("Convert", 20);
+        }
     }
 
     void Update()
     {
         if (timeRemaining >1 && timeRemaining<1.5)
+        {
+            HitBoxChampignon.enabled = false;
+        }
         
         if (timeRemaining > 0)
         {
