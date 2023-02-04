@@ -13,14 +13,16 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 direction2D;
     public float speed;
     [SerializeField] private GameObject BlackFade;
+    private Vector3 offSet;
 
     void Start()
     {
+        offSet = gameObject.GetComponent<BoxCollider>().center;
         RoadScript = GameObject.FindGameObjectWithTag("Road").GetComponent<RoadScript>();
         RoadSprites = RoadScript.RoadSprites;
         tileRoadNumber = 1;
         destination = RoadSprites[tileRoadNumber];
-        Vector3 direction = (destination.position - transform.position).normalized;
+        Vector3 direction = (destination.position - transform.position - offSet).normalized;
         direction2D =  new Vector3(direction.x, direction.y, 0);
     }
 
@@ -40,6 +42,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (Entity.gameObject.tag == "RoadTile")
         {
+            
             if (tileRoadNumber == RoadSprites.Length - 2)
             {
                 Instantiate( BlackFade, Vector3.zero, Quaternion.identity);
@@ -47,7 +50,9 @@ public class EnemyMovement : MonoBehaviour
             }
             tileRoadNumber += 1;
             destination = RoadSprites[tileRoadNumber];
-            direction2D = (destination.position - transform.position).normalized;
+            Debug.Log(destination.gameObject.name);
+            Vector3 direction = (destination.position- transform.position - offSet).normalized;
+            direction2D =  new Vector3(direction.x, direction.y, 0);
         }
     }
 }

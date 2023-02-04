@@ -10,6 +10,7 @@ public class Nuage : MonoBehaviour
     // Update is called once per frame
     public int damageChampi;
     public float slowforce;
+    [SerializeField] private Animator champAnimator;
     void OnTriggerEnter(Collider enemy)
     {
         if (enemy.gameObject.tag == "Enemy")
@@ -32,9 +33,11 @@ public class Nuage : MonoBehaviour
         if (timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime;
+            champAnimator.SetBool("Smoke", false);
         }
         else
         {
+            champAnimator.SetBool("Smoke", true);
             timeRemaining =3f;
             HitBoxChampignon.enabled=true;
             transform.GetChild(0).gameObject.SetActive(true);
