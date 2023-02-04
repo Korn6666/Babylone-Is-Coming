@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private float maxConversion;
-    private float conversion;
+    public float conversion;
     [SerializeField] private EnemyMovement EnemyMovement;
     private WaveManager WaveManager;
     private bool converted;
@@ -18,9 +18,9 @@ public class EnemyHealth : MonoBehaviour
     }
 
     //Pour qu'il se fasse SendMessage("Convert") quand il prend un hit
-    void Convert()
+    void Convert(int damage)
     {
-        conversion += 1;
+        conversion += damage;
         Debug.Log(conversion);
     } 
 
