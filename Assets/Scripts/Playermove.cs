@@ -46,7 +46,9 @@ public class Playermove : MonoBehaviour
                 playerAnimator.SetBool("isMoving", true);
 
                 //Interruption du canvas si mouvement
-                CanvasBuild.SetActive(false);
+                ResetCanvas();
+
+            
             }
             else
             {
@@ -55,7 +57,19 @@ public class Playermove : MonoBehaviour
                 //Canvas apparait si immobile
                 CanvasBuild.SetActive(true);
             }
-     
+
+        void ResetCanvas()
+        {
+                CanvasBuild.transform.GetChild(0).gameObject.SetActive(false);
+                CanvasBuild.transform.GetChild(1).gameObject.SetActive(false);
+                CanvasBuild.transform.GetChild(2).gameObject.SetActive(false);
+                CanvasBuild.transform.GetChild(3).gameObject.SetActive(false);
+                CanvasBuild.transform.GetChild(4).gameObject.SetActive(false);
+                CanvasBuild.transform.GetChild(5).gameObject.SetActive(false);
+                CanvasBuild.transform.GetChild(6).gameObject.SetActive(false);
+                CanvasBuild.transform.GetChild(7).gameObject.SetActive(false);
+        }
+
 
         }
 
