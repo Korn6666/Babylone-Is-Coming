@@ -13,7 +13,7 @@ public class Playermove : MonoBehaviour
     private float BaseDistance;
     [SerializeField] private Animator playerAnimator;
     public GameObject CanvasBuild;
-    
+
     void Start()
     {
 
