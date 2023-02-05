@@ -12,6 +12,7 @@ public class TourPissenlitBehavior : MonoBehaviour
     private float coolDownPiss=0.5f;
     public float maxRange;
     private GameObject proj;
+    [SerializeField] private Animator pissAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,13 +43,13 @@ public class TourPissenlitBehavior : MonoBehaviour
             {
                 if (coolDownPiss <0)
                 {
+                    pissAnimator.SetTrigger("Fiou");
                     ThrowProjectile(listEnemy[0]);
                     coolDownPiss=0.5f;
                 }
                 else
                 {
                     coolDownPiss-=Time.deltaTime;
-
                 }
             }
         }
@@ -56,8 +57,8 @@ public class TourPissenlitBehavior : MonoBehaviour
 
     void ThrowProjectile(GameObject enemy)
     {
-        direction = (enemy.transform.position - transform.position).normalized;
-        proj=Instantiate(projectile, transform.position, Quaternion.identity);
+        direction = (enemy.transform.position - transform.position - new Vector3(0,1,0)).normalized;
+        proj=Instantiate(projectile, transform.position + new Vector3(0,1,0), Quaternion.identity);
         proj.GetComponent<PissMove>().TourPissenlit = gameObject;
     }
 
