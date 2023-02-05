@@ -87,7 +87,14 @@ public class PlayerInteract : MonoBehaviour
             
             else
             {
-                CanvasBuild.transform.GetChild(7).gameObject.SetActive(true);
+                if (currentTile.tag == "Plots")
+                {
+                    CanvasBuild.transform.GetChild(7).gameObject.SetActive(true);
+                }
+                if (currentTile.tag == "Plants")
+                {
+                    CanvasBuild.transform.GetChild(8).gameObject.SetActive(true);
+                }
             }
 
 
@@ -152,6 +159,7 @@ public class PlayerInteract : MonoBehaviour
         CanvasBuild.transform.GetChild(5).gameObject.SetActive(false);
         CanvasBuild.transform.GetChild(6).gameObject.SetActive(false);
         CanvasBuild.transform.GetChild(7).gameObject.SetActive(false);
+        CanvasBuild.transform.GetChild(8).gameObject.SetActive(false);
     }
 
 }
