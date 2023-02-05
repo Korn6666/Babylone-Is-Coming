@@ -8,7 +8,8 @@ public class EnemyHealth : MonoBehaviour
     public float conversion;
     [SerializeField] private EnemyMovement EnemyMovement;
     private WaveManager WaveManager;
-    private bool converted;
+    
+    public bool converted;
 
     //slow
     public bool slowed;
