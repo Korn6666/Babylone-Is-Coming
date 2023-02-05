@@ -128,7 +128,7 @@ public class WaveManager : MonoBehaviour
                     Pluie.SetActive(false);
                     child.gameObject.SendMessage("Pluie");
                 }
-                if (meteo>0.8)
+                if (meteo>1)
                 {
                     Gaz.GetComponent<Animator>().SetTrigger("EndGaz");
                     yield return new WaitForSeconds(1);
