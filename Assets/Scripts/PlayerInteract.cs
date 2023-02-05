@@ -67,25 +67,24 @@ public class PlayerInteract : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && !busy && !moving)
         {
             peutConstruire = !currentTile.GetComponent<Occupe>().boolOccupe;
-            if (peutConstruire)
-            {
-                currentTile.transform.GetChild(0).gameObject.SetActive(true);
+            currentTile.transform.GetChild(0).gameObject.SetActive(true);
+                
                 //Recolte de ressources
-                if (currentTile.tag == "Plants")
-                {
-                    scriptRecolte = currentTile.GetComponent<recolte>();
+            if (currentTile.tag == "Plants")
+            {
+                scriptRecolte = currentTile.GetComponent<recolte>();
 
-                    PlayerGrammes += scriptRecolte.grammes;
-                    currentTile.GetComponent<recolte>().Recolte();
-                }
+                PlayerGrammes += scriptRecolte.grammes;
+                currentTile.GetComponent<recolte>().Recolte();
+            }
 
                 //Build (canvas)
-                if (currentTile.tag == "Plots")
-                {
-                    CanvasBuild.transform.GetChild(0).gameObject.SetActive(true);
-                    CanvasBuild.transform.GetChild(2).gameObject.SetActive(true);
-                }
+            if (currentTile.tag == "Plots" && peutConstruire)
+            {
+                CanvasBuild.transform.GetChild(0).gameObject.SetActive(true);
+                CanvasBuild.transform.GetChild(2).gameObject.SetActive(true);
             }
+            
             else
             {
                 CanvasBuild.transform.GetChild(7).gameObject.SetActive(true);
