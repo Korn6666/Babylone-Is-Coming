@@ -412,21 +412,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8300012679797855188, guid: 95129ae3934e8c1459366d6ad0275091,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0234338
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300012679797855188, guid: 95129ae3934e8c1459366d6ad0275091,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0347149
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300012679797855188, guid: 95129ae3934e8c1459366d6ad0275091,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.45575
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300012679797855188, guid: 95129ae3934e8c1459366d6ad0275091,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.8203797
       objectReference: {fileID: 0}
@@ -475,57 +460,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8300012679797855189, guid: 95129ae3934e8c1459366d6ad0275091,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ae9ed189d04094d3f83e388c879669f8,
-        type: 3}
-    - target: {fileID: 8300012679797855189, guid: 95129ae3934e8c1459366d6ad0275091,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300012679797855189, guid: 95129ae3934e8c1459366d6ad0275091,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300012679797855189, guid: 95129ae3934e8c1459366d6ad0275091,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300012679797855190, guid: 95129ae3934e8c1459366d6ad0275091,
-        type: 3}
-      propertyPath: FleuriOuNon
-      value: 
-      objectReference: {fileID: 584307693}
     - target: {fileID: 8300012679797855190, guid: 95129ae3934e8c1459366d6ad0275091,
         type: 3}
       propertyPath: WaveManager
       value: 
       objectReference: {fileID: 1342548579}
-    - target: {fileID: 8300012679797855191, guid: 95129ae3934e8c1459366d6ad0275091,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 3.1195285
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300012679797855191, guid: 95129ae3934e8c1459366d6ad0275091,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2.5272968
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300012679797855191, guid: 95129ae3934e8c1459366d6ad0275091,
-        type: 3}
-      propertyPath: m_Center.x
-      value: -0.026655803
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300012679797855191, guid: 95129ae3934e8c1459366d6ad0275091,
-        type: 3}
-      propertyPath: m_Center.y
-      value: -0.26364908
-      objectReference: {fileID: 0}
     - target: {fileID: 8300012679797855192, guid: 95129ae3934e8c1459366d6ad0275091,
         type: 3}
       propertyPath: m_Name
@@ -533,44 +472,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95129ae3934e8c1459366d6ad0275091, type: 3}
---- !u!1 &584307692 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8300012679797855192, guid: 95129ae3934e8c1459366d6ad0275091,
-    type: 3}
-  m_PrefabInstance: {fileID: 584307691}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &584307693
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584307692}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 56861a0c461944dc886791b27325b0d6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &584307694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584307692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9f2ab92c74a81141af5159d00069a78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boolOccupe: 0
 --- !u!4 &584307697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8300012679797855188, guid: 95129ae3934e8c1459366d6ad0275091,
