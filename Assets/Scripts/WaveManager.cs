@@ -68,6 +68,17 @@ public class WaveManager : MonoBehaviour
         currentWave = 0;
         while (true)
         {
+
+            // Phase de preparation
+            preparation = true;
+            preparationTimeTimer = preparationTime;     
+
+            while (preparation)
+            {
+                yield return null;
+            }    
+
+            
             currentWave += 1;
             foreach (Transform child in PlantsPapa.transform)
             {
@@ -90,14 +101,7 @@ public class WaveManager : MonoBehaviour
                 yield return null;
             }
 
-            // Phase de preparation
-            preparation = true;
-            preparationTimeTimer = preparationTime;     
 
-            while (preparation)
-            {
-                yield return null;
-            }    
 
             foreach (Transform child in PlantsPapa.transform)
             { 
