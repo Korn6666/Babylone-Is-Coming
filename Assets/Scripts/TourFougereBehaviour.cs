@@ -9,15 +9,22 @@ public class TourFougereBehaviour : MonoBehaviour
     private bool CooldownIsUp;
     private float Cooldown;
     public float MaxCooldown;
+    [SerializeField] private Animator FougereAnimator;
+    private GameObject enemyToHit;
+    private bool caresse;
 
-   void OnTriggerEnter(Collider enemy)
+    [SerializeField]private float WaitForAnimationTime = 0.3f;
+
+    private float WaitForAnimationTimer = 0;
+
+    void OnTriggerEnter(Collider enemy)
     {
         if (enemy.gameObject.tag == "Enemy" && CooldownIsUp)
         {
-            object[] tableau = new object[2];
-            tableau[0]=damageFougere;
-            tableau[1]=slowforce;
-            enemy.gameObject.SendMessage("Convert", tableau);
+            enemyToHit = enemy.gameObject;
+            FougereAnimator.SetTrigger("Caresse");
+            WaitForAnimationTimer = WaitForAnimationTime;
+            caresse = true;
         }
     }
     // Update is called once per frame
@@ -31,6 +38,23 @@ public class TourFougereBehaviour : MonoBehaviour
         else
         {
             Cooldown -= Time.deltaTime;
+        }
+        if ( WaitForAnimationTimer >= 0)
+        {
+            WaitForAnimationTimer -= Time.deltaTime;
+        }
+
+
+        if (caresse)
+        {
+            if ( WaitForAnimationTimer < 0)
+            {
+                object[] tableau = new object[2];
+                tableau[0]=damageFougere;
+                tableau[1]=slowforce;
+                enemyToHit.SendMessage("Convert", tableau);
+                caresse = false;
+            }
         }
     }
 }
