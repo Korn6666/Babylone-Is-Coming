@@ -131,8 +131,7 @@ MonoBehaviour:
   BaseTransform: {fileID: 2752610140652635163, guid: 27cb51561188f4f51878a4d18835efd2,
     type: 3}
   playerAnimator: {fileID: 1079557597}
-  CanvasBuild: {fileID: 5414222471331971368, guid: efce72462cec1214094b53ccee7a855c,
-    type: 3}
+  CanvasBuild: {fileID: 0}
 --- !u!114 &1853042653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ed5e6e03dec43c4985e0b5b22ee563f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerGrammes: 0
+  PlayerGrammes: 10
   currentTile: {fileID: 0}
   CanvasBuild: {fileID: 0}
   TourChampignon: {fileID: 5344564321782160966, guid: d8477c08781ffac4385b8377bc7be60d,

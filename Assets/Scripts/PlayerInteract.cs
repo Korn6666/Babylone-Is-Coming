@@ -25,6 +25,8 @@ public class PlayerInteract : MonoBehaviour
     private bool peutConstruire;
     public Occupe Occupe;
 
+    private bool busy;
+    private float busycd;
     //Detection de la tile
     void OnTriggerEnter(Collider tile)
     {
@@ -41,7 +43,17 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (busy)
+        {
+            busycd-=Time.deltaTime;
+        }
+        else
+        {
+            busycd=0.2f;
+            busy=false;
+        }
+
+        if (Input.GetButtonDown("Fire1") && !busy)
         {
             peutConstruire = !currentTile.GetComponent<Occupe>().boolOccupe;
             if (peutConstruire)
@@ -60,7 +72,6 @@ public class PlayerInteract : MonoBehaviour
                 //Build (canvas)
                 if (currentTile.tag == "Plots")
                 {
-                    ResetCanvas();
                     CanvasBuild.transform.GetChild(0).gameObject.SetActive(true);
                     CanvasBuild.transform.GetChild(2).gameObject.SetActive(true);
 
@@ -68,7 +79,6 @@ public class PlayerInteract : MonoBehaviour
             }
             else
             {
-                ResetCanvas();
                 CanvasBuild.transform.GetChild(7).gameObject.SetActive(true);
             }
 
@@ -92,8 +102,6 @@ public class PlayerInteract : MonoBehaviour
         }
         else
         {
-            Debug.Log("okokok");
-            ResetCanvas();
             CanvasBuild.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
@@ -103,10 +111,7 @@ public class PlayerInteract : MonoBehaviour
         {
             PlayerGrammes-=CoutTourChampignon;
             ResetCanvas();
-            CanvasBuild.transform.GetChild(2).gameObject.SetActive(true);
-            CanvasBuild.transform.GetChild(3).gameObject.SetActive(true);
-            CanvasBuild.transform.GetChild(4).gameObject.SetActive(true);
-            CanvasBuild.transform.GetChild(5).gameObject.SetActive(true);
+            busy=true;
         }
         else
         {
@@ -118,12 +123,13 @@ public class PlayerInteract : MonoBehaviour
 
     public void BuildTourFougere(float orientation)
     {
+        ResetCanvas();
         TilePosition = currentTile.transform.position;
         TilePosition.z-=1;
         fougere = Instantiate(TourFougere, TilePosition, Quaternion.identity);
         currentTile.GetComponent<Occupe>().boolOccupe = true;
         fougere.transform.Rotate(new Vector3(0,0,orientation));
-        ResetCanvas();
+        busy=false;
 
     }
 

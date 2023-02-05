@@ -1602,6 +1602,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb7657be6ee6a49a4b92f162669d98bd, type: 3}
+--- !u!1 &630527001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1790853492, guid: efce72462cec1214094b53ccee7a855c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1567052980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &633446622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3662687975053778200, guid: cb7657be6ee6a49a4b92f162669d98bd,
@@ -2326,10 +2332,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1853042649, guid: c59d683500fea2f4ea7a17d3ae18286b, type: 3}
+      propertyPath: CanvasBuild
+      value: 
+      objectReference: {fileID: 190554062}
     - target: {fileID: 1853042653, guid: c59d683500fea2f4ea7a17d3ae18286b, type: 3}
       propertyPath: CanvasBuild
       value: 
       objectReference: {fileID: 190554062}
+    - target: {fileID: 1853042653, guid: c59d683500fea2f4ea7a17d3ae18286b, type: 3}
+      propertyPath: PlayerGrammes
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2994825801932239174, guid: c59d683500fea2f4ea7a17d3ae18286b,
         type: 3}
       propertyPath: m_RootOrder
@@ -3861,6 +3875,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 353574832, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 157430979}
+    - target: {fileID: 353574832, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuildTourFougere
+      objectReference: {fileID: 0}
     - target: {fileID: 353574833, guid: efce72462cec1214094b53ccee7a855c, type: 3}
       propertyPath: m_Type
       value: 0
@@ -3886,6 +3908,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1476793627, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 157430979}
+    - target: {fileID: 1476793627, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuildTourFougere
+      objectReference: {fileID: 0}
     - target: {fileID: 1476793628, guid: efce72462cec1214094b53ccee7a855c, type: 3}
       propertyPath: m_Type
       value: 0
@@ -3902,6 +3932,14 @@ PrefabInstance:
     - target: {fileID: 1555590907, guid: efce72462cec1214094b53ccee7a855c, type: 3}
       propertyPath: m_LocalScale.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1555590908, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 157430979}
+    - target: {fileID: 1555590908, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuildTourFougere
       objectReference: {fileID: 0}
     - target: {fileID: 1555590909, guid: efce72462cec1214094b53ccee7a855c, type: 3}
       propertyPath: m_Type
@@ -3923,6 +3961,18 @@ PrefabInstance:
     - target: {fileID: 1621387755, guid: efce72462cec1214094b53ccee7a855c, type: 3}
       propertyPath: m_LocalScale.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621387756, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621387756, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 157430979}
+    - target: {fileID: 1621387756, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuildTourFougere
       objectReference: {fileID: 0}
     - target: {fileID: 1621387757, guid: efce72462cec1214094b53ccee7a855c, type: 3}
       propertyPath: m_Type
@@ -3946,12 +3996,40 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1790853494, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790853494, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790853494, guid: efce72462cec1214094b53ccee7a855c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 157430979}
     - target: {fileID: 1790853494, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 630527001}
+    - target: {fileID: 1790853494, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790853494, guid: efce72462cec1214094b53ccee7a855c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BuildTourFougereOrientation
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790853494, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790853494, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790853494, guid: efce72462cec1214094b53ccee7a855c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1790853495, guid: efce72462cec1214094b53ccee7a855c, type: 3}
       propertyPath: m_Type
