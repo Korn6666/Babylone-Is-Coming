@@ -21,6 +21,9 @@ public class WaveManager : MonoBehaviour
     public List<GameObject> PlantsList;
 
     public GameObject player;
+
+    public GameObject CanvasBuild;
+
     void Start()
     {
 
@@ -44,11 +47,9 @@ public class WaveManager : MonoBehaviour
             {
                 TimeBar.gameObject.SetActive(false);
                 preparation = false;
-                player.SendMessage("RentreALaMaison", true);
+                ResetCanvas();
             }
         }
-
-
     }
 
     private IEnumerator SpawnanEnemy()
@@ -68,7 +69,6 @@ public class WaveManager : MonoBehaviour
         while (true)
         {
             currentWave += 1;
-            player.SendMessage("RentreALaMaison", false);
             foreach (Transform child in PlantsPapa.transform)
             {
                 PlantsList.Add(child.gameObject);
@@ -104,6 +104,22 @@ public class WaveManager : MonoBehaviour
                 child.gameObject.SendMessage("Grow");
 
             }
+
+            
         }
     }
+
+
+    public void ResetCanvas()
+    {
+        CanvasBuild.transform.GetChild(0).gameObject.SetActive(false);
+        CanvasBuild.transform.GetChild(1).gameObject.SetActive(false);
+        CanvasBuild.transform.GetChild(2).gameObject.SetActive(false);
+        CanvasBuild.transform.GetChild(3).gameObject.SetActive(false);
+        CanvasBuild.transform.GetChild(4).gameObject.SetActive(false);
+        CanvasBuild.transform.GetChild(5).gameObject.SetActive(false);            
+        CanvasBuild.transform.GetChild(6).gameObject.SetActive(false);
+        CanvasBuild.transform.GetChild(7).gameObject.SetActive(false);
+        }
+
 }

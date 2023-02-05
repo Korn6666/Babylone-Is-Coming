@@ -23,17 +23,16 @@ public class Playermove : MonoBehaviour
     {
         if (!WaveManager.preparation)
         {
+            isMoving = true;
             BaseDistance = (BaseTransform.position - transform.position).magnitude;
             if ( BaseDistance > 1 )
             {
-                isMoving = true;
                 playerAnimator.SetBool("isMoving", true);
                 BaseDirection = (BaseTransform.position - transform.position).normalized;
                 transform.Translate( BaseDirection * Time.deltaTime * speed);
             }
             else 
             {
-                isMoving = false;
                 playerAnimator.SetBool("isMoving", false);
             }
 
