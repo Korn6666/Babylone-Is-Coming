@@ -120,6 +120,7 @@ public class WaveManager : MonoBehaviour
         CanvasBuild.transform.GetChild(5).gameObject.SetActive(false);            
         CanvasBuild.transform.GetChild(6).gameObject.SetActive(false);
         CanvasBuild.transform.GetChild(7).gameObject.SetActive(false);
+        CanvasBuild.transform.GetChild(8).gameObject.SetActive(false);
         }
 
 }
