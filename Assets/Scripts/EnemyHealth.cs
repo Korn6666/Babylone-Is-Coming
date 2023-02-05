@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public float conversion;
     [SerializeField] private EnemyMovement EnemyMovement;
     private WaveManager WaveManager;
-    private bool converted;
+    public bool converted;
 
     //slow
     public bool slowed;
@@ -81,16 +81,16 @@ public class EnemyHealth : MonoBehaviour
             }
         }
        
-       //Doit mourrir après conversion
-       if (needsToDie)
-       {
-            deathCoolDown -= Time.deltaTime;
+    //    //Doit mourrir après conversion
+    //    if (needsToDie)
+    //    {
+    //         deathCoolDown -= Time.deltaTime;
 
-            if (deathCoolDown<0)
-            {
-                Destroy(gameObject);
-            }
-       }
+    //         if (deathCoolDown<0)
+    //         {
+    //             Destroy(gameObject);
+    //         }
+    //    }
 
 
         if (conversion >= maxConversion && !converted) 

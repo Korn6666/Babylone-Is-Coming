@@ -40,7 +40,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter (Collider Entity)
     {
-        if (Entity.gameObject.tag == "RoadTile")
+        if (Entity.gameObject.tag == "RoadTile" && !gameObject.GetComponent<EnemyHealth>().converted)
         {
             
             if (tileRoadNumber == RoadSprites.Length - 2)
