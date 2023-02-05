@@ -113,8 +113,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5801265, y: 3.4688594, z: 5}
-  m_Center: {x: 0.059689756, y: 0.013573869, z: 0}
+  m_Size: {x: 0.89796543, y: 0.7686637, z: 10}
+  m_Center: {x: 0.07764202, y: -0.013980656, z: 0}
 --- !u!114 &1853042649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +132,7 @@ MonoBehaviour:
     type: 3}
   playerAnimator: {fileID: 1079557597}
   CanvasBuild: {fileID: 0}
+  isMoving: 0
 --- !u!114 &1853042653
 MonoBehaviour:
   m_ObjectHideFlags: 0
