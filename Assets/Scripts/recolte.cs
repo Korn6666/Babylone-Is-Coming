@@ -15,7 +15,7 @@ public class recolte : MonoBehaviour
     // Update is called once per frame
     public void Grow()
     {
-        FleuriOuNon.SetBool("Fleuri", true);
+        FleuriOuNon.SetTrigger("Fleur");
         tourSansRecolte +=1;
         grammes+= 10*tourSansRecolte;
         Debug.Log("oui");
@@ -23,13 +23,13 @@ public class recolte : MonoBehaviour
 
     void Jardined()
         {
-            FleuriOuNon.SetBool("Fleuri", false);
+            FleuriOuNon.SetTrigger("Récolte");
             grammes=0;
         }
 
     public void Recolte()
     {
-        FleuriOuNon.SetBool("Fleuri", false);
+        FleuriOuNon.SetTrigger("Récolte");
         grammes = 0;
         tourSansRecolte = 0;
     }
