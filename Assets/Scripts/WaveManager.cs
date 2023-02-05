@@ -25,6 +25,10 @@ public class WaveManager : MonoBehaviour
     public GameObject player;
 
     public GameObject CanvasBuild;
+    [SerializeField] private GameObject Plane;
+    [SerializeField] private GameObject Gaz;
+    [SerializeField] private GameObject Pluie;
+
 
     void Start()
     {
@@ -79,18 +83,23 @@ public class WaveManager : MonoBehaviour
                 yield return null;
             }    
 
-            
-            currentWave += 1;
+            //Meteo pour une vague
             meteo = Random.Range(0f,1.0f);
-            if (meteo<0.2)
+            if (meteo>0)
             {
-                //LANCER LA PLUIE
-                
+                Pluie.SetActive(true);                
             }
             if (meteo>0.8)
             {
-                //LANCER LES AVIONS A HERBICIDE
+                Plane.SetActive(true);
+                yield return new WaitForSeconds(3);
+                Plane.SetActive(false);
+                Gaz.SetActive(true);
+                //LANCER LES AVIONS
             }
+
+            //Vague suivante
+            currentWave += 1;
 
             for (int i=1; i<=currentWaveNbEnemy; i++)
             {
@@ -109,15 +118,21 @@ public class WaveManager : MonoBehaviour
                 yield return null;
             }
 
+
+            //Effets de la meteo
             foreach (Transform child in PlantsPapa.transform)
             { 
                 child.gameObject.SendMessage("Grow");
-                if (meteo<0.2)
+                if (meteo>0)
                 {
+                    Pluie.SetActive(false);
                     child.gameObject.SendMessage("Pluie");
                 }
                 if (meteo>0.8)
                 {
+                    Gaz.GetComponent<Animator>().SetTrigger("EndGaz");
+                    yield return new WaitForSeconds(1);
+                    Gaz.SetActive(false);
                     child.gameObject.SendMessage("Jardined");
                 }
             }
