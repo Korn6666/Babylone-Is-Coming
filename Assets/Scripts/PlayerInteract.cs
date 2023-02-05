@@ -79,8 +79,13 @@ public class PlayerInteract : MonoBehaviour
             {
                 scriptRecolte = currentTile.GetComponent<recolte>();
 
-                PlayerGrammes += scriptRecolte.grammes;
-                currentTile.GetComponent<recolte>().Recolte();
+                if ( scriptRecolte.grammes > 0)
+                {
+                    PlayerGrammes += scriptRecolte.grammes;
+                    scriptRecolte.grammes=0;
+                    currentTile.GetComponent<recolte>().Recolte();
+                    CanvasBuild.transform.GetChild(8).gameObject.SetActive(true);
+                }
             }
 
                 //Build (canvas)
@@ -99,7 +104,10 @@ public class PlayerInteract : MonoBehaviour
                 }
                 if (currentTile.tag == "Plants")
                 {
-                    CanvasBuild.transform.GetChild(8).gameObject.SetActive(true);
+                    // if ( scriptRecolte.grammes > 0)
+                    // {
+                    //     CanvasBuild.transform.GetChild(8).gameObject.SetActive(true);
+                    // }
                 }
             }
 
@@ -131,8 +139,12 @@ public class PlayerInteract : MonoBehaviour
         {
         if (CoutTourFougere <= PlayerGrammes)
         {
-            PlayerGrammes-=CoutTourFougere;
             ResetCanvas();
+            CanvasBuild.transform.GetChild(3).gameObject.SetActive(true);
+            CanvasBuild.transform.GetChild(4).gameObject.SetActive(true);
+            CanvasBuild.transform.GetChild(5).gameObject.SetActive(true);
+            CanvasBuild.transform.GetChild(6).gameObject.SetActive(true);
+            gameObject.GetComponent<Playermove>().enabled = false;
             busy=true;
         }
         else
@@ -145,6 +157,7 @@ public class PlayerInteract : MonoBehaviour
 
     public void BuildTourFougere(float orientation)
     {
+        PlayerGrammes-=CoutTourFougere;
         ResetCanvas();
         TilePosition = currentTile.transform.position;
         TilePosition.z-=1;

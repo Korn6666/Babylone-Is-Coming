@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class NombreDeGramme : MonoBehaviour
 {
@@ -13,7 +15,7 @@ public class NombreDeGramme : MonoBehaviour
     void Update()
     {        
         nbGrammes = PlayerInteract.PlayerGrammes;
-        GetComponent<Text>().text = "Nombre de grammes:  " + nbGrammes;
+        gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = nbGrammes.ToString();
 
     }
 }

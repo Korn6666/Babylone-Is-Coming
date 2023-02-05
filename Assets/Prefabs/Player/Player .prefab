@@ -160,6 +160,7 @@ MonoBehaviour:
     type: 3}
   CoutTourPissenlit: 5
   CoutTourFougere: 5
+  projeeectile: {fileID: 0}
   Occupe: {fileID: 0}
 --- !u!95 &1079557597
 Animator:
