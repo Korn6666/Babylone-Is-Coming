@@ -9,12 +9,14 @@ public class Playermove : MonoBehaviour
     private float verti;
     public float speed;
     [SerializeField] private Transform BaseTransform;
+    [SerializeField] private Transform insideHome;
+    [SerializeField] private Transform outsideHome;
     private Vector3 BaseDirection;
     private float BaseDistance;
     [SerializeField] private Animator playerAnimator;
     public GameObject CanvasBuild;
     public bool isMoving;
-    private bool atHome;
+    public bool atHome;
 
     void Start()
     {
@@ -68,14 +70,12 @@ public class Playermove : MonoBehaviour
 
         if (atHome)
         {
-            Debug.Log("atHome");
-            BaseTransform.GetChild(0).gameObject.SetActive(false);
-            BaseTransform.GetChild(1).gameObject.SetActive(true);
-        }else 
+            insideHome.gameObject.SetActive(true);
+            outsideHome.gameObject.SetActive(false);
+        }else
         {
-            Debug.Log("NotatHome");
-            BaseTransform.GetChild(0).gameObject.SetActive(true);
-            BaseTransform.GetChild(1).gameObject.SetActive(false);
+            insideHome.gameObject.SetActive(false);
+            outsideHome.gameObject.SetActive(true);
         }
     }
 
