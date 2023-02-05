@@ -67,13 +67,6 @@ public class WaveManager : MonoBehaviour
         while (true)
         {
             currentWave += 1;
-
-
-        foreach (Transform child in PlantsPapa.transform)
-        { 
-            child.gameObject.SendMessage("Grow");
-
-        }
             
             foreach (Transform child in PlantsPapa.transform)
             {
@@ -104,6 +97,12 @@ public class WaveManager : MonoBehaviour
             {
                 yield return null;
             }    
+
+            foreach (Transform child in PlantsPapa.transform)
+            { 
+                child.gameObject.SendMessage("Grow");
+
+            }
         }
     }
 }

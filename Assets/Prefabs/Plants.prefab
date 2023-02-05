@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8300012679797855189}
   - component: {fileID: 8300012679797855190}
   - component: {fileID: 8300012679797855191}
+  - component: {fileID: 584307693}
+  - component: {fileID: 584307694}
   m_Layer: 0
   m_Name: Plants
   m_TagString: Plants
@@ -28,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8300012679797855192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.566, y: 0.181, z: 0}
-  m_LocalScale: {x: 2.2456036, y: 2.2703564, z: 1}
+  m_LocalScale: {x: 1.0234338, y: 1.0347149, z: 0.45575}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b76742519b8b2714a863473f49c7eb42, type: 3}
-  m_Color: {r: 0.30248994, g: 0.9339623, b: 0.18062477, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ae9ed189d04094d3f83e388c879669f8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,10 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Jardinier: {fileID: 0}
-  WaveManager: {fileID: 6657815278731196793, guid: ebf9ed29bc42842928fc50e09201d1a8,
-    type: 3}
+  WaveManager: {fileID: 0}
   grammes: 10
   tourSansRecolte: 0
+  FleuriOuNon: {fileID: 584307693}
 --- !u!65 &8300012679797855191
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,5 +113,37 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.1195285, y: 2.5272968, z: 0.2}
+  m_Center: {x: -0.026655803, y: -0.26364908, z: 0}
+--- !u!95 &584307693
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300012679797855192}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56861a0c461944dc886791b27325b0d6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &584307694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8300012679797855192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f2ab92c74a81141af5159d00069a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolOccupe: 0

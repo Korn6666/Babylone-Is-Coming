@@ -54,8 +54,7 @@ public class PlayerInteract : MonoBehaviour
                     scriptRecolte = currentTile.GetComponent<recolte>();
 
                     PlayerGrammes += scriptRecolte.grammes;
-                    scriptRecolte.grammes=0;
-                    scriptRecolte.tourSansRecolte=0;
+                    currentTile.GetComponent<recolte>().Recolte();
                 }
 
                 //Build (canvas)

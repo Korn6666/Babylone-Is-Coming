@@ -9,11 +9,13 @@ public class recolte : MonoBehaviour
     public GameObject WaveManager;
     public int grammes;
     public int tourSansRecolte;
+    [SerializeField] private Animator FleuriOuNon;
 
 
     // Update is called once per frame
-    void Grow()
+    public void Grow()
     {
+        FleuriOuNon.SetBool("Fleuri", true);
         tourSansRecolte +=1;
         grammes+= 10*tourSansRecolte;
         Debug.Log("oui");
@@ -21,8 +23,14 @@ public class recolte : MonoBehaviour
 
     void Jardined()
         {
+            FleuriOuNon.SetBool("Fleuri", false);
             grammes=0;
         }
 
-
+    public void Recolte()
+    {
+        FleuriOuNon.SetBool("Fleuri", false);
+        grammes = 0;
+        tourSansRecolte = 0;
+    }
 }
