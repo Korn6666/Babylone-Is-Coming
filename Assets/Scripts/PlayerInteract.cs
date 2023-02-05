@@ -23,6 +23,8 @@ public class PlayerInteract : MonoBehaviour
     public GameObject TourPissenlit;
     public int CoutTourPissenlit;
     public int CoutTourFougere;
+    public GameObject projeeectile;
+    private GameObject Tourpiss;
 
     //Occupation de la tile
     private bool peutConstruire;
@@ -86,6 +88,7 @@ public class PlayerInteract : MonoBehaviour
             {
                 CanvasBuild.transform.GetChild(0).gameObject.SetActive(true);
                 CanvasBuild.transform.GetChild(2).gameObject.SetActive(true);
+                CanvasBuild.transform.GetChild(9).gameObject.SetActive(true);
             }
             
             else
@@ -160,7 +163,7 @@ public class PlayerInteract : MonoBehaviour
         
             TilePosition = currentTile.transform.position;
             TilePosition.z-=1;
-            Instantiate(TourPissenlit, TilePosition, Quaternion.identity);
+            Tourpiss=Instantiate(TourPissenlit, TilePosition, Quaternion.identity);
             currentTile.GetComponent<Occupe>().boolOccupe = true;
             ResetCanvas();
            
@@ -183,6 +186,8 @@ public class PlayerInteract : MonoBehaviour
         CanvasBuild.transform.GetChild(6).gameObject.SetActive(false);
         CanvasBuild.transform.GetChild(7).gameObject.SetActive(false);
         CanvasBuild.transform.GetChild(8).gameObject.SetActive(false);
+        CanvasBuild.transform.GetChild(9).gameObject.SetActive(false);
+
     }
 
 }
