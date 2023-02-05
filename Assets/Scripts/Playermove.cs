@@ -90,6 +90,8 @@ public class Playermove : MonoBehaviour
             CanvasBuild.transform.GetChild(6).gameObject.SetActive(false);
             CanvasBuild.transform.GetChild(7).gameObject.SetActive(false);
             CanvasBuild.transform.GetChild(8).gameObject.SetActive(false);
+            CanvasBuild.transform.GetChild(9).gameObject.SetActive(false);
+
 
     }
 }

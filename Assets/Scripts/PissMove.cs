@@ -8,12 +8,15 @@ public class PissMove : MonoBehaviour
     public float slowforcePiss;
     public Vector3 dir;
     public float pisspeed;
-    public TourPissenlitBehavior TourPissenlitBehaviorScript;
+
+    public GameObject TourPissenlit;
+
     private float cdDeath=5f;
     // Start is called before the first frame update
     void Start()
     {
-        dir=TourPissenlitBehaviorScript.direction;
+        
+        dir=TourPissenlit.GetComponent<TourPissenlitBehavior>().direction;
     }
 
     // Update is called once per frame

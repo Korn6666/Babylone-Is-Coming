@@ -112,5 +112,4 @@ MonoBehaviour:
   slowforcePiss: 1
   dir: {x: 0, y: 0, z: 0}
   pisspeed: 30
-  TourPissenlitBehaviorScript: {fileID: 490855948860795625, guid: 9d297f4ca90fa7242973b5d32cce2e66,
-    type: 3}
+  TourPissenlit: {fileID: 0}

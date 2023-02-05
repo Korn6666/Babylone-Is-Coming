@@ -11,7 +11,7 @@ public class TourPissenlitBehavior : MonoBehaviour
     public GameObject projectile;
     private float coolDownPiss=0.5f;
     public float maxRange;
-
+    private GameObject proj;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,21 +31,25 @@ public class TourPissenlitBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (listEnemy[0].GetComponent<EnemyHealth>().converted || Distance(listEnemy[0]) > maxRange)
+        if (listEnemy.Count>0)
         {
-            listEnemy.RemoveAt(0);
-        }
-        else
-        {
-            if (coolDownPiss <0)
+            if (listEnemy[0].GetComponent<EnemyHealth>().converted || Distance(listEnemy[0]) > maxRange)
             {
-                ThrowProjectile(listEnemy[0]);
-                coolDownPiss=0.5f;
+                listEnemy.RemoveAt(0);
             }
+    
             else
             {
-                coolDownPiss-=Time.deltaTime;
+                if (coolDownPiss <0)
+                {
+                    ThrowProjectile(listEnemy[0]);
+                    coolDownPiss=0.5f;
+                }
+                else
+                {
+                    coolDownPiss-=Time.deltaTime;
 
+                }
             }
         }
     }
@@ -53,7 +57,8 @@ public class TourPissenlitBehavior : MonoBehaviour
     void ThrowProjectile(GameObject enemy)
     {
         direction = (enemy.transform.position - transform.position).normalized;
-        Instantiate(projectile, transform.position, Quaternion.identity);
+        proj=Instantiate(projectile, transform.position, Quaternion.identity);
+        proj.GetComponent<PissMove>().TourPissenlit = gameObject;
     }
 
     float Distance(GameObject enemy)
