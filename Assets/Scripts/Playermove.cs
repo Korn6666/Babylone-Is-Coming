@@ -13,6 +13,7 @@ public class Playermove : MonoBehaviour
     private float BaseDistance;
     [SerializeField] private Animator playerAnimator;
     public GameObject CanvasBuild;
+    public bool isMoving;
 
     void Start()
     {
@@ -25,12 +26,14 @@ public class Playermove : MonoBehaviour
             BaseDistance = (BaseTransform.position - transform.position).magnitude;
             if ( BaseDistance > 1 )
             {
+                isMoving = true;
                 playerAnimator.SetBool("isMoving", true);
                 BaseDirection = (BaseTransform.position - transform.position).normalized;
                 transform.Translate( BaseDirection * Time.deltaTime * speed);
             }
             else 
             {
+                isMoving = false;
                 playerAnimator.SetBool("isMoving", false);
             }
 
@@ -42,6 +45,7 @@ public class Playermove : MonoBehaviour
 
             if ( horiz != 0 || verti != 0)
             {
+                isMoving = true;
                 transform.Translate(new Vector3(horiz,verti,0) * Time.deltaTime * speed);
                 playerAnimator.SetBool("isMoving", true);
 
@@ -52,6 +56,7 @@ public class Playermove : MonoBehaviour
             }
             else
             {
+                isMoving = false;
                 playerAnimator.SetBool("isMoving", false);
 
                 //Canvas apparait si immobile

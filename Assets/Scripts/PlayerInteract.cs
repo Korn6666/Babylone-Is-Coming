@@ -40,7 +40,6 @@ public class PlayerInteract : MonoBehaviour
         {
                 currentTile=tile.gameObject;
         }
-
     }
 
     void Update()
@@ -55,16 +54,20 @@ public class PlayerInteract : MonoBehaviour
             busy=false;
         }
 
+        if ( gameObject.GetComponent<Playermove>().isMoving )
+        {
+            currentTile.transform.GetChild(0).gameObject.SetActive(false);
+        }
+
         if (Input.GetButtonDown("Fire1") && !busy &&!mouvementForce)
         {
             peutConstruire = !currentTile.GetComponent<Occupe>().boolOccupe;
             if (peutConstruire)
             {
-                
+                currentTile.transform.GetChild(0).gameObject.SetActive(true);
                 //Recolte de ressources
                 if (currentTile.tag == "Plants")
                 {
-
                     scriptRecolte = currentTile.GetComponent<recolte>();
 
                     PlayerGrammes += scriptRecolte.grammes;
@@ -76,7 +79,6 @@ public class PlayerInteract : MonoBehaviour
                 {
                     CanvasBuild.transform.GetChild(0).gameObject.SetActive(true);
                     CanvasBuild.transform.GetChild(2).gameObject.SetActive(true);
-
                 }
             }
             else
