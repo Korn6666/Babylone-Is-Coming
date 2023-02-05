@@ -56,6 +56,14 @@ public class EnemyHealth : MonoBehaviour
         }
     } 
 
+    void OnTriggerEnter(Collider wall)
+    {
+        if (wall.gameObject.name == "WallColliders")
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -82,18 +90,17 @@ public class EnemyHealth : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-
        }
 
 
         if (conversion >= maxConversion && !converted) 
         {
-            colorIndex = Random.Range( 0, 3);
+            colorIndex = Random.Range(0, 3);
             bizAnimator.SetTrigger(color[colorIndex]);
             EnemyMovement.speed *= 1.5f;
             converted = true;
             WaveManager.activeEnemyCount -= 1;
-            gameObject.GetComponent<BoxCollider>().enabled=false;
+            gameObject.tag = "Untagged";
             EnemyMovement.direction2D = new Vector3(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f),0).normalized;
             needsToDie = true;
         }
@@ -107,7 +114,6 @@ public class EnemyHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             WaveManager.activeEnemyCount -= 1;
-            Debug.Log(WaveManager.activeEnemyCount);
             Destroy(gameObject);
         }
     }
