@@ -130,7 +130,7 @@ Transform:
   m_GameObject: {fileID: 5344564321782160966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -7}
-  m_LocalScale: {x: 1.0238951, y: 1.0238951, z: 1.0238951}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4975933694964483567}
   m_Father: {fileID: 0}
@@ -216,6 +216,7 @@ MonoBehaviour:
   damageChampi: 2
   slowforce: 3
   champAnimator: {fileID: 5339868396357255551}
+  tailleFinale: 1.9
 --- !u!95 &5339868396357255551
 Animator:
   serializedVersion: 3

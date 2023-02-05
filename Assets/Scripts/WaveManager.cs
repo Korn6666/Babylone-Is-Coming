@@ -17,6 +17,8 @@ public class WaveManager : MonoBehaviour
     public GameObject Enemy1;
     private GameObject[] EnemyList;
 
+    private float meteo;
+
     public GameObject PlantsPapa;
     public List<GameObject> PlantsList;
 
@@ -26,7 +28,6 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
-
 
         EnemyList = new GameObject[] { Enemy1 };
         StartCoroutine(WavesRoutine());
@@ -80,10 +81,17 @@ public class WaveManager : MonoBehaviour
 
             
             currentWave += 1;
-            foreach (Transform child in PlantsPapa.transform)
+            meteo = Random.Range(0f,1.0f);
+            if (meteo<0.2)
             {
-                PlantsList.Add(child.gameObject);
+                //LANCER LA PLUIE
+                
             }
+            if (meteo>0.8)
+            {
+                //LANCER LES AVIONS A HERBICIDE
+            }
+
             for (int i=1; i<=currentWaveNbEnemy; i++)
             {
                 StartCoroutine(SpawnanEnemy()); 
@@ -101,12 +109,17 @@ public class WaveManager : MonoBehaviour
                 yield return null;
             }
 
-
-
             foreach (Transform child in PlantsPapa.transform)
             { 
                 child.gameObject.SendMessage("Grow");
-
+                if (meteo<0.2)
+                {
+                    child.gameObject.SendMessage("Pluie");
+                }
+                if (meteo>0.8)
+                {
+                    child.gameObject.SendMessage("Jardined");
+                }
             }
 
             

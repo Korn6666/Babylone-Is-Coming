@@ -17,6 +17,17 @@ public class TourFougereBehaviour : MonoBehaviour
 
     private float WaitForAnimationTimer = 0;
 
+    private bool IsGonnaGrow;
+    [SerializeField] private float tailleFinale;
+
+    void Start()
+    {
+        IsGonnaGrow = true;
+    }
+
+
+
+
     void OnTriggerEnter(Collider enemy)
     {
         if (enemy.gameObject.tag == "Enemy" && CooldownIsUp)
@@ -43,6 +54,16 @@ public class TourFougereBehaviour : MonoBehaviour
         {
             WaitForAnimationTimer -= Time.deltaTime;
         }
+
+        if (IsGonnaGrow)
+        {
+            gameObject.transform.localScale += new Vector3(0.01f,0.01f,0.01f);
+            if (gameObject.transform.localScale.magnitude > tailleFinale)
+            {
+                IsGonnaGrow = false;
+            } 
+        }
+
 
 
         if (caresse)
