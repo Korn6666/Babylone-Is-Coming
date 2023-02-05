@@ -20,7 +20,7 @@ public class WaveManager : MonoBehaviour
     public GameObject PlantsPapa;
     public List<GameObject> PlantsList;
 
-
+    public GameObject player;
     void Start()
     {
 
@@ -44,6 +44,7 @@ public class WaveManager : MonoBehaviour
             {
                 TimeBar.gameObject.SetActive(false);
                 preparation = false;
+                player.SendMessage("RentreALaMaison", true);
             }
         }
 
@@ -67,7 +68,7 @@ public class WaveManager : MonoBehaviour
         while (true)
         {
             currentWave += 1;
-            
+            player.SendMessage("RentreALaMaison", false);
             foreach (Transform child in PlantsPapa.transform)
             {
                 PlantsList.Add(child.gameObject);

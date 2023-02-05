@@ -26,7 +26,9 @@ public class PlayerInteract : MonoBehaviour
     public Occupe Occupe;
 
     private bool busy;
-    private float busycd;
+    private float busycd; 
+
+    private bool mouvementForce;
     //Detection de la tile
     void OnTriggerEnter(Collider tile)
     {
@@ -53,7 +55,7 @@ public class PlayerInteract : MonoBehaviour
             busy=false;
         }
 
-        if (Input.GetButtonDown("Fire1") && !busy)
+        if (Input.GetButtonDown("Fire1") && !busy &&!mouvementForce)
         {
             peutConstruire = !currentTile.GetComponent<Occupe>().boolOccupe;
             if (peutConstruire)
@@ -102,6 +104,7 @@ public class PlayerInteract : MonoBehaviour
         }
         else
         {
+            ResetCanvas();
             CanvasBuild.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
@@ -145,6 +148,10 @@ public class PlayerInteract : MonoBehaviour
         CanvasBuild.transform.GetChild(7).gameObject.SetActive(false);
     }
 
+    public void RentreALaMaison(bool rentre)
+    {
+        mouvementForce=rentre;
+    }
 
 
 
