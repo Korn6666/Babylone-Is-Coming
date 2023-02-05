@@ -111,5 +111,5 @@ MonoBehaviour:
   damagePiss: 1
   slowforcePiss: 1
   dir: {x: 0, y: 0, z: 0}
-  pisspeed: 30
+  pisspeed: 20
   TourPissenlit: {fileID: 0}

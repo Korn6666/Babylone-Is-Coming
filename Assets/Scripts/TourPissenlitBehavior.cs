@@ -13,10 +13,16 @@ public class TourPissenlitBehavior : MonoBehaviour
     public float maxRange;
     private GameObject proj;
     [SerializeField] private Animator pissAnimator;
+    private bool IsGonnaGrow;
+    [SerializeField] private float tailleFinale;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        IsGonnaGrow = true;
+
     }
 
     void OnTriggerEnter(Collider enemy)
@@ -32,6 +38,15 @@ public class TourPissenlitBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (IsGonnaGrow)
+        {
+            gameObject.transform.localScale += new Vector3(0.01f,0.01f,0.01f);
+            if (gameObject.transform.localScale.magnitude > tailleFinale)
+            {
+                IsGonnaGrow = false;
+            } 
+        }
+
         if (listEnemy.Count>0)
         {
             if (listEnemy[0].GetComponent<EnemyHealth>().converted || Distance(listEnemy[0]) > maxRange)

@@ -143,9 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fe831f477594c20b6a15fcfa09799f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxConversion: 10
+  maxConversion: 20
   conversion: 0
   EnemyMovement: {fileID: 2905923998902447076}
+  converted: 0
   slowed: 0
   maxCooldown: 2
   bizAnimator: {fileID: 754403721}

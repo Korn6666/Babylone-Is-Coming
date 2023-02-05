@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Jardinier: {fileID: 0}
   WaveManager: {fileID: 0}
-  grammes: 10
+  grammes: 0
   tourSansRecolte: 0
   FleuriOuNon: {fileID: 584307693}
 --- !u!65 &8300012679797855191
