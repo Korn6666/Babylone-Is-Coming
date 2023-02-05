@@ -20,6 +20,9 @@ public class PlayerInteract : MonoBehaviour
     public int CoutTourChampignon;
     private GameObject fougere;
     public GameObject TourFougere;
+    public GameObject TourPissenlit;
+    public int CoutTourPissenlit;
+    public int CoutTourFougere;
 
     //Occupation de la tile
     private bool peutConstruire;
@@ -123,9 +126,9 @@ public class PlayerInteract : MonoBehaviour
     }
     public void BuildTourFougereOrientation()
         {
-        if (CoutTourChampignon <= PlayerGrammes)
+        if (CoutTourFougere <= PlayerGrammes)
         {
-            PlayerGrammes-=CoutTourChampignon;
+            PlayerGrammes-=CoutTourFougere;
             ResetCanvas();
             busy=true;
         }
@@ -147,6 +150,26 @@ public class PlayerInteract : MonoBehaviour
         fougere.transform.Rotate(new Vector3(0,0,orientation));
         busy=false;
 
+    }
+
+    public void BuildTourPissenlit()
+    {
+        if (CoutTourPissenlit <= PlayerGrammes)
+        {
+            PlayerGrammes-=CoutTourPissenlit;
+        
+            TilePosition = currentTile.transform.position;
+            TilePosition.z-=1;
+            Instantiate(TourPissenlit, TilePosition, Quaternion.identity);
+            currentTile.GetComponent<Occupe>().boolOccupe = true;
+            ResetCanvas();
+           
+        }
+        else
+        {
+            ResetCanvas();
+            CanvasBuild.transform.GetChild(1).gameObject.SetActive(true);
+        }
     }
 
     public void ResetCanvas()
