@@ -17,11 +17,13 @@ public class recolte : MonoBehaviour
     {
         FleuriOuNon.SetTrigger("Fleur");
         tourSansRecolte +=1;
-        grammes+= 10*tourSansRecolte;
-        Debug.Log("oui");
+        if (grammes<=100)
+        {
+            grammes+= 10*tourSansRecolte;
+        }
     }
 
-    void Jardined()
+    public void Jardined()
         {
             FleuriOuNon.SetTrigger("Récolte");
             grammes=0;
@@ -32,5 +34,11 @@ public class recolte : MonoBehaviour
         FleuriOuNon.SetTrigger("Récolte");
         grammes = 0;
         tourSansRecolte = 0;
+    }
+
+    public void Pluie()
+    {
+        tourSansRecolte+=1;
+        FleuriOuNon.SetTrigger("Fleur");
     }
 }

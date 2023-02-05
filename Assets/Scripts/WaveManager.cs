@@ -85,7 +85,7 @@ public class WaveManager : MonoBehaviour
 
             //Meteo pour une vague
             meteo = Random.Range(0f,1.0f);
-            if (meteo>0)
+            if (meteo<0.2f)
             {
                 Pluie.SetActive(true);                
             }
@@ -123,7 +123,7 @@ public class WaveManager : MonoBehaviour
             foreach (Transform child in PlantsPapa.transform)
             { 
                 child.gameObject.SendMessage("Grow");
-                if (meteo>0)
+                if (meteo<0.2f)
                 {
                     Pluie.SetActive(false);
                     child.gameObject.SendMessage("Pluie");
