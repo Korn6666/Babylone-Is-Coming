@@ -23,12 +23,16 @@ public class EnemyHealth : MonoBehaviour
     //Post-Conversion
     private float deathCoolDown=10f;
     private bool needsToDie=false;
+    [SerializeField] private Animator bizAnimator;
+    private string[] color;
+    private int colorIndex;
 
     void Start()
     {
         WaveManager = GameObject.FindGameObjectWithTag("WaveManager").GetComponent<WaveManager>();
         conversion = 0;
         cooldown = maxCooldown;
+        color = new string[] { "Convert1", "Convert2", "Convert3"};
     }
 
     //Pour qu'il se fasse SendMessage("Convert") quand il prend un hit
@@ -84,6 +88,8 @@ public class EnemyHealth : MonoBehaviour
 
         if (conversion >= maxConversion && !converted) 
         {
+            colorIndex = Random.Range( 0, 3);
+            bizAnimator.SetTrigger(color[colorIndex]);
             EnemyMovement.speed *= 1.5f;
             converted = true;
             WaveManager.activeEnemyCount -= 1;

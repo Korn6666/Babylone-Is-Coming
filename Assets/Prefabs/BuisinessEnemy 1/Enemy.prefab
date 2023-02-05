@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd817831913f4d698240db0fdcb2e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction2D: {x: 0, y: 0, z: 0}
   speed: 5
   BlackFade: {fileID: 7382126324282957111, guid: 97e10800452994d8d831fb710e1145f6,
     type: 3}
@@ -147,6 +148,7 @@ MonoBehaviour:
   EnemyMovement: {fileID: 2905923998902447076}
   slowed: 0
   maxCooldown: 2
+  bizAnimator: {fileID: 754403721}
 --- !u!95 &754403721
 Animator:
   serializedVersion: 3
