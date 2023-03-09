@@ -1,10 +1,8 @@
-# RootsCulture
+# Babylone Is Coming
 
 Be a rasta and defend nature against the vilain business man. You need to convert them to rastafari.
 
 Tower Defense in which your need to move your player to place your towers. 
-
-
 
 HOW TO PLAY:
 
@@ -21,3 +19,5 @@ Alan Cozilis: Game Art     https://www.artstation.com/sm0gie
 Simon Manès: Dev
 
 Karel Jonquais: Dev
+
+Babylone Is Coming is a video game created on a Game Jam (one week end).
